@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project_Euler", "Project_Euler\Project_Euler.vcxproj", "{2304AC2E-785C-46E9-88BC-7F1A35848007}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Problem_1", "Problem_1\Problem_1.vcxproj", "{01855C8A-06E9-4F12-A66D-D738E90A467E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{2304AC2E-785C-46E9-88BC-7F1A35848007}.Release|x64.Build.0 = Release|x64
 		{2304AC2E-785C-46E9-88BC-7F1A35848007}.Release|x86.ActiveCfg = Release|Win32
 		{2304AC2E-785C-46E9-88BC-7F1A35848007}.Release|x86.Build.0 = Release|Win32
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Debug|x64.ActiveCfg = Debug|x64
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Debug|x64.Build.0 = Debug|x64
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Debug|x86.ActiveCfg = Debug|Win32
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Debug|x86.Build.0 = Debug|Win32
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Release|x64.ActiveCfg = Release|x64
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Release|x64.Build.0 = Release|x64
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Release|x86.ActiveCfg = Release|Win32
+		{01855C8A-06E9-4F12-A66D-D738E90A467E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
