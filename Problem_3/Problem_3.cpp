@@ -1,24 +1,27 @@
-// Problem 2 of Project Euler
+// Problem 3 of Project Euler
 #include <iostream>
 #include <time.h>
 #include <iomanip>
 #include <ctime>
 
-int f(int n)
+long long int f(long long int input)
 {
-	int output = 2;
-	int fib_1 = 1;
-	int fib_2 = 2;
-	while (fib_1 + fib_2<n)
+	long long int output = input;
+	for (int i = 2; i <= input; i += 1)
 	{
-		int temp = fib_1 + fib_2;
-		fib_1 = fib_2;
-		fib_2 = temp;
-		if (fib_2 % 2 == 0)
+		int k = 0;
+		while (input%i == 0)
 		{
-			output += fib_2;
+			k += 1;
+			input /= i;
+		}
+		if (input == 1)
+		{
+			output = i;
+			break;
 		}
 	}
+
 	return output;
 }
 
@@ -34,14 +37,14 @@ double timer(output_type(*func) (input_type), input_type params, int N = 100000)
 
 int main(void) {
 	// Solution
-	std::cout << "The solution is " << f(4000000) << std::endl;
+	std::cout << "The solution is " << f(600851475143) << std::endl;
 
 	// Timing information
 	int N = 100000;
-	double total_time = timer(f, 4000000, N = N);
+	double total_time = timer(f, 600851475143, N = N);
 	std::cout << std::fixed << std::setprecision(10) << "Total time used for " << N << " cycles: "
 		<< total_time << " s\n";
 	std::cout << std::fixed << std::setprecision(10) << "CPU time used: "
-		<< total_time / N << " s\n";
+		<< total_time/N << " s\n";
 	return 0;
 }
