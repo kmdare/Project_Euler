@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2304AC2E-785C-46E9-88BC-7F1A35848007}</ProjectGuid>
+    <ProjectGuid>{0A18522B-A3AA-4B6A-B654-709BC4E8C360}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Project_Euler</RootNamespace>
+    <RootNamespace>Problem_2</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,12 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Problem_1\Problem_1.vcxproj">
-      <Project>{01855c8a-06e9-4f12-a66d-d738e90a467e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Problem_2\Problem_2.vcxproj">
-      <Project>{0a18522b-a3aa-4b6a-b654-709bc4e8c360}</Project>
-    </ProjectReference>
+    <ClCompile Include="Problem_2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
