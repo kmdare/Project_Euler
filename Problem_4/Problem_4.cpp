@@ -1,17 +1,43 @@
-// Problem 1 of Project Euler
+// Problem 4 of Project Euler
 #include <iostream>
 #include <time.h>
 #include <iomanip>
 #include <ctime>
+#include <algorithm>
+#include <string>
+#include <math.h>
 
-int f(int n)
+bool is_palindrome(int input)
 {
-	int output = 0;
-	for (int i = 3; i<n; i += 1)
+	int magnitude = std::floor(log10(input));
+	int end_index = magnitude +1 - magnitude % 2;
+	int a[10];
+	for (int i = 0; i <=end_index; i++)
 	{
-		if ((i % 3 == 0) || (i % 5 == 0))
+		a[i] = input % 10;
+		input /= 10;
+	}
+	for (int i = 0; i <= magnitude / 2; i++)
+	{
+		if (a[i] != a[end_index - i]) return false;
+	}
+	return true;
+}
+
+int f(int params[2])
+{
+	int lower_bound = params[0];
+	int upper_bound = params[1];
+	int output = 1;
+	for (int i = upper_bound; i>lower_bound; i -= 1)
+	{
+		for (int j = i; j>lower_bound; j -= 1)
 		{
-			output += i;
+			int product = i*j;
+			if (is_palindrome(product) && (product>output))
+			{
+				output = product;
+			}
 		}
 	}
 	return output;
@@ -29,12 +55,12 @@ double timer(output_type(*func) (input_type), input_type params, int N = 100000)
 
 int main(void) {
 	// Solution
-	int params = 1000;
+	int params[2] = { 99,999 };
 	std::cout << "The solution is " << f(params) << std::endl;
 
 	// Timing information
-	int N = 100000;
-	double total_time = timer(f,params, N = N);
+	int N = 100;
+	double total_time = timer(f, params, N = N);
 	std::cout << std::fixed << std::setprecision(10) << "Total time used for " << N << " cycles: "
 		<< total_time << "s\n";
 	std::cout << std::fixed << std::setprecision(10) << "CPU time used: "

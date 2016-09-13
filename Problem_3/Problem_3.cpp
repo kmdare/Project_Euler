@@ -37,14 +37,15 @@ double timer(output_type(*func) (input_type), input_type params, int N = 100000)
 
 int main(void) {
 	// Solution
+	int params = 600851475143;
 	std::cout << "The solution is " << f(600851475143) << std::endl;
 
 	// Timing information
 	int N = 100000;
 	double total_time = timer(f, 600851475143, N = N);
 	std::cout << std::fixed << std::setprecision(10) << "Total time used for " << N << " cycles: "
-		<< total_time << " s\n";
+		<< total_time << "s\n";
 	std::cout << std::fixed << std::setprecision(10) << "CPU time used: "
-		<< total_time/N << " s\n";
+		<< total_time/N << "s\n";
 	return 0;
 }
