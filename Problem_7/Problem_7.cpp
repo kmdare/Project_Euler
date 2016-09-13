@@ -5,11 +5,13 @@
 #include <ctime>
 
 #include <vector>
+#include <math.h>
 
 bool is_prime(int input, std::vector<int> lower_primes)
 {
 	for (std::vector<int>::iterator it = lower_primes.begin(); it != lower_primes.end(); ++it)
 	{
+		if (*it > std::sqrt(input)) return true;
 		if (input%*it == 0)
 		{
 			return false;
@@ -47,7 +49,7 @@ int main(void) {
 	std::cout << "The solution is " << f(params) << std::endl;
 
 	// Timing information
-	int N = 100;
+	int N = 1;
 	double total_time = timer(f, params, N = N);
 	std::cout << std::fixed << std::setprecision(10) << "Total time used for " << N << " cycles: "
 		<< total_time << "s\n";
