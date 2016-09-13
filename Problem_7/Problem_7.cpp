@@ -7,23 +7,22 @@
 #include <vector>
 #include <math.h>
 
-bool is_prime(int input, std::vector<int> lower_primes)
+typedef unsigned int uint;
+
+bool is_prime(uint input, std::vector<uint> primes)
 {
-	for (std::vector<int>::iterator it = lower_primes.begin(); it != lower_primes.end(); ++it)
+	for (auto const& prime : primes)
 	{
-		if (*it > std::sqrt(input)) return true;
-		if (input%*it == 0)
-		{
-			return false;
-		}
+		if (prime > std::sqrt(input)) return true;
+		if (input%prime == 0) return false;
 	}
 	return true;
 }
 
-int f(int n)
+uint f(uint n)
 {
-	std::vector<int> primes = { 2 };
-	for (int i = 1; primes.size()<n; i++)
+	std::vector<uint> primes = { 2 };
+	for (uint i = 1; primes.size()<n; i++)
 	{
 		if (is_prime(2 * i + 1, primes))
 		{
@@ -34,22 +33,22 @@ int f(int n)
 }
 
 template<typename input_type, typename output_type>
-double timer(output_type(*func) (input_type), input_type params, int N = 100000)
+double timer(output_type(*func) (input_type), input_type params, uint N = 100000)
 {
 	std::clock_t c_start = std::clock();
-	for (int i = 0; i < N; i++) func(params);
+	for (uint i = 0; i < N; i++) func(params);
 	std::clock_t c_end = std::clock();
 	double total_time = 1.0*(c_end - c_start) / (CLOCKS_PER_SEC);
 	return total_time;
 }
 
-int main(void) {
+uint main(void) {
 	// Solution
-	int params = 10001;
+	uint params = 10001;
 	std::cout << "The solution is " << f(params) << std::endl;
 
 	// Timing information
-	int N = 1;
+	uint N = 10;
 	double total_time = timer(f, params, N = N);
 	std::cout << std::fixed << std::setprecision(10) << "Total time used for " << N << " cycles: "
 		<< total_time << "s\n";
