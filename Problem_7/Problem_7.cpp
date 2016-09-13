@@ -22,6 +22,7 @@ bool is_prime(uint input, std::vector<uint> primes)
 uint f(uint n)
 {
 	std::vector<uint> primes = { 2 };
+	primes.reserve(n);
 	for (uint i = 1; primes.size()<n; i++)
 	{
 		if (is_prime(2 * i + 1, primes))
@@ -42,7 +43,7 @@ double timer(output_type(*func) (input_type), input_type params, uint N = 100000
 	return total_time;
 }
 
-uint main(void) {
+int main(void) {
 	// Solution
 	uint params = 10001;
 	std::cout << "The solution is " << f(params) << std::endl;
